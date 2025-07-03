@@ -102,5 +102,14 @@ document.querySelector("#btn-add-random").addEventListener("click", () => {
 
   const newRow = createContactRow(randomContact);
 
+  // this would be the correct approach as i never added the event listeners
+
+  newRow.querySelector(".btn-delete").addEventListener('click', () => {
+    newRow.remove(); 
+  });
+  newRow.querySelector(".btn-like").addEventListener('click', () => {
+    newRow.classList.toggle("selected");
+  });
+
   tableBody.appendChild(newRow);
 });
